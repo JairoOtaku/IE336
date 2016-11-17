@@ -73,4 +73,8 @@ public class Alumno implements java.io.Serializable {
         this.acceso = acceso;
     }
 
+    //---------------  METODOS FACADE ------------------//
+    
+
+
 }
