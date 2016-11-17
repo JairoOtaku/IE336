@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-nov-2016 10:58:36 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Alumno" table="Alumno" catalog="dam15_Hibernate" optimistic-lock="version">
+        <id name="dni" type="string">
+            <column name="DNI" length="9" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="12" not-null="true" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="Apellidos" length="50" not-null="true" />
+        </property>
+        <property name="domicilio" type="string">
+            <column name="Domicilio" length="90" not-null="true" />
+        </property>
+        <property name="telefono" type="int">
+            <column name="Telefono" not-null="true" />
+        </property>
+        <property name="acceso" type="int">
+            <column name="Acceso" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

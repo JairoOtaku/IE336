@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-nov-2016 10:58:36 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Pojos.Asignatura" table="Asignatura" catalog="dam15_Hibernate" optimistic-lock="version">
+        <id name="codigo" type="int">
+            <column name="Codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="titulo" type="string">
+            <column name="Titulo" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="creditos" type="int">
+            <column name="Creditos" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
