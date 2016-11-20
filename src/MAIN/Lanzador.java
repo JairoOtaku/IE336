@@ -7,7 +7,7 @@ package MAIN;
 
 /**
  *
- * @author Usuario
+ * @author Jairo_Otaku
  */
 public class Lanzador {
 

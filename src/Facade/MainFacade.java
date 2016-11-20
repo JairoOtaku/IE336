@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Usuario
+ * @author Jairo_Otaku
  */
 public class MainFacade implements FacadeAlumno, FacadeAsignaturas, FacadeAulas, FacadeProfesor {
 

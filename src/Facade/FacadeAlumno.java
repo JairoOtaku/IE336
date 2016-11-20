@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Usuario
+ * @author Jairo_Otaku
  */
 public interface FacadeAlumno {
 

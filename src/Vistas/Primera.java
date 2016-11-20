@@ -7,7 +7,7 @@ package Vistas;
 
 /**
  *
- * @author Usuario
+ * @author Jairo_Otaku
  */
 public class Primera extends javax.swing.JFrame {
 
