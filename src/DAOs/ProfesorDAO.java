@@ -1,14 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DAOs;
+
+import Pojos.Profesor;
+import java.util.ArrayList;
 
 /**
  *
- * @author Usuario
+ * @author Jairo_Otaku
  */
 public class ProfesorDAO {
-    
+
+    Profesor profe;
+    //Factory factoria
+
+    public ArrayList<Profesor> selectAllProfesor() {
+        ArrayList<Profesor> array = new ArrayList<>();
+        return array;
+    }
+
+    public ArrayList<Profesor> selectProfesor(int dni) {
+        ArrayList<Profesor> array = new ArrayList<>();
+        return array;
+    }
+
+    public void updateProfesor() {
+
+    }
+
+    public void insertProfesor() {
+
+    }
+
+    public void deleteProfesor() {
+
+    }
 }
