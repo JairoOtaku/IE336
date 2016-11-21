@@ -7,4 +7,4 @@ package Facade;
  */
 public interface FacadeAulas {
 
-   
+}
