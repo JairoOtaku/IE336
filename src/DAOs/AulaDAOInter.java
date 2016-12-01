@@ -7,6 +7,7 @@ package DAOs;
 
 import Pojos.Aulas;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,11 +17,11 @@ public interface AulaDAOInter {
 
     public ArrayList<Aulas> selectAllAulas();
 
-    public ArrayList<Aulas> selectAulas(int id);
+    public ArrayList<Aulas> selectAulas(int NAula);
 
-    public void updateAulas();
+    public void InsertUpdateAulas(int NAula, String nombreEdificio);
 
-    public void insertAulas();
+    public void deleteAulas(int NAula);
 
-    public void deleteAulas();
+    public DefaultTableModel todoAulas();
 }

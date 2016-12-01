@@ -7,6 +7,7 @@ package DAOs;
 
 import Pojos.Profesor;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,13 +15,13 @@ import java.util.ArrayList;
  */
 public interface ProfeDAOInter {
 
-    public ArrayList<Profesor> selectAllProfesor() ;
+    public ArrayList<Profesor> selectAllProfesor();
 
     public ArrayList<Profesor> selectProfesor(int dni);
 
-    public void updateProfesor();
+    public void InsertUpdateProfesor(String dni, String nombre, String apellidos, String domicilio, int telefono, String asignatura1, String asignatura2, String asignatura3, String asignatura4, String asignatura5, String asignatura6);
 
-    public void insertProfesor();
+    public void deleteProfesor(String dni);
 
-    public void deleteProfesor();
+    public DefaultTableModel todoProfes();
 }

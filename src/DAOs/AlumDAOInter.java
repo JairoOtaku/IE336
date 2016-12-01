@@ -2,6 +2,7 @@ package DAOs;
 
 import Pojos.Alumno;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,9 +14,9 @@ public interface AlumDAOInter {
 
     public ArrayList<Alumno> selectAlumno(int dni);
 
-    public void updateAlumno();
+    public void InsertUpdateAlumno(String dni, String nombre, String apellidos, String domicilio, int telefono, int acceso);
 
-    public void insertAlumno();
+    public void deleteAlumno(String dni);
 
-    public void deleteAlumno();
+    public DefaultTableModel todoAlumnos();
 }

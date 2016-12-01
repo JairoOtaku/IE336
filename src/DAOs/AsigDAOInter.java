@@ -7,6 +7,7 @@ package DAOs;
 
 import Pojos.Asignatura;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,11 +17,12 @@ public interface AsigDAOInter {
 
     public ArrayList<Asignatura> selectAllAsignatura();
 
-    public ArrayList<Asignatura> selectAsignatura(int id);
+    public ArrayList<Asignatura> selectAsignatura(int codigo);
 
-    public void updateAsignatura();
+    public void InsertUpdateAsignatura(int codigo, String titulo, int creditos);
 
-    public void insertAsignatura();
+    public void deleteAsignatura(int codigo);
 
-    public void deleteAsignatura();
+    public DefaultTableModel todoAsignaturas();
+
 }
