@@ -7,11 +7,11 @@
     <property name="hibernate.connection.url">jdbc:mysql://192.168.28.3:3306/dam15_Hibernate?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">dam15</property>
     <property name="hibernate.connection.password">salesianas</property>
-    <mapping resource="Pojos/Asignatura.hbm.xml"/>
-    <mapping resource="Pojos/AsigNota.hbm.xml"/>
     <mapping resource="Pojos/Profesor.hbm.xml"/>
-    <mapping resource="Pojos/Alumno.hbm.xml"/>
+    <mapping resource="Pojos/AsigNota.hbm.xml"/>
     <mapping resource="Pojos/AulasAsig.hbm.xml"/>
     <mapping resource="Pojos/Aulas.hbm.xml"/>
+    <mapping resource="Pojos/Asignatura.hbm.xml"/>
+    <mapping resource="Pojos/Alumno.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

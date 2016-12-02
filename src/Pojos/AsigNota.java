@@ -1,5 +1,5 @@
 package Pojos;
-// Generated 17-nov-2016 10:58:35 by Hibernate Tools 4.3.1
+// Generated 02-dic-2016 14:09:33 by Hibernate Tools 4.3.1
 
 
 
@@ -10,13 +10,17 @@ public class AsigNota  implements java.io.Serializable {
 
 
      private AsigNotaId id;
+     private Alumno alumno;
+     private Asignatura asignatura;
      private int nota;
 
     public AsigNota() {
     }
 
-    public AsigNota(AsigNotaId id, int nota) {
+    public AsigNota(AsigNotaId id, Alumno alumno, Asignatura asignatura, int nota) {
        this.id = id;
+       this.alumno = alumno;
+       this.asignatura = asignatura;
        this.nota = nota;
     }
    
@@ -26,6 +30,20 @@ public class AsigNota  implements java.io.Serializable {
     
     public void setId(AsigNotaId id) {
         this.id = id;
+    }
+    public Alumno getAlumno() {
+        return this.alumno;
+    }
+    
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
+    }
+    public Asignatura getAsignatura() {
+        return this.asignatura;
+    }
+    
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
     }
     public int getNota() {
         return this.nota;

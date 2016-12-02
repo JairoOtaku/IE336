@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-nov-2016 10:58:36 by Hibernate Tools 4.3.1 -->
+<!-- Generated 02-dic-2016 14:09:34 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Pojos.Aulas" table="Aulas" catalog="dam15_Hibernate" optimistic-lock="version">
         <id name="NAula" type="int">
@@ -11,5 +11,11 @@
         <property name="nombreEdificio" type="string">
             <column name="Nombre_Edificio" length="15" not-null="true" />
         </property>
+        <set name="aulasAsigs" table="Aulas_Asig" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cod_aula" not-null="true" />
+            </key>
+            <one-to-many class="Pojos.AulasAsig" />
+        </set>
     </class>
 </hibernate-mapping>

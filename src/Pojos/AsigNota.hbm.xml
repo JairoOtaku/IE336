@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-nov-2016 10:58:36 by Hibernate Tools 4.3.1 -->
+<!-- Generated 02-dic-2016 14:09:34 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Pojos.AsigNota" table="Asig_Nota" catalog="dam15_Hibernate" optimistic-lock="version">
         <composite-id name="id" class="Pojos.AsigNotaId">
@@ -12,6 +12,12 @@
                 <column name="cod_asig" />
             </key-property>
         </composite-id>
+        <many-to-one name="alumno" class="Pojos.Alumno" update="false" insert="false" fetch="select">
+            <column name="dni_alum" length="9" not-null="true" />
+        </many-to-one>
+        <many-to-one name="asignatura" class="Pojos.Asignatura" update="false" insert="false" fetch="select">
+            <column name="cod_asig" not-null="true" />
+        </many-to-one>
         <property name="nota" type="int">
             <column name="nota" not-null="true" />
         </property>
