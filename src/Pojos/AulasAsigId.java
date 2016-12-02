@@ -68,5 +68,4 @@ public class AulasAsigId implements java.io.Serializable {
         result = 37 * result + this.getCodAula();
         return result;
     }
-
 }

@@ -22,5 +22,4 @@ public class AulasAsig implements java.io.Serializable {
     public void setId(AulasAsigId id) {
         this.id = id;
     }
-
 }
