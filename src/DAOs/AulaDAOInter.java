@@ -15,10 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public interface AulaDAOInter {
 
-    public ArrayList<Aulas> selectAllAulas();
-
-    public ArrayList<Aulas> selectAulas(int NAula);
-
+   
     public void InsertUpdateAulas(int NAula, String nombreEdificio);
 
     public void deleteAulas(int NAula);

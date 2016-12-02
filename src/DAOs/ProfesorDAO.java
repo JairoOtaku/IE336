@@ -19,7 +19,6 @@ public class ProfesorDAO implements ProfeDAOInter {
     Profesor profe;
     //Factory factoria
 
-    @Override
     public ArrayList<Profesor> selectAllProfesor() {
         ArrayList<Profesor> array = new ArrayList<>();
         String c = "select a from Profesor a";
@@ -39,20 +38,20 @@ public class ProfesorDAO implements ProfeDAOInter {
     @Override
     public DefaultTableModel todoProfes() {
         DefaultTableModel ProfeTab = new DefaultTableModel();
-        Object[] fila = new Object[10];
+        Object[] fila = new Object[11];
         for (Profesor p : selectAllProfesor()) {
             // CREAMOS LOS NOMBRES DE LAS COLUMNAS
-            ProfeTab.addColumn(p.getDni());
-            ProfeTab.addColumn(p.getNombre());
-            ProfeTab.addColumn(p.getApellidos());
-            ProfeTab.addColumn(p.getDomicilio());
-            ProfeTab.addColumn(p.getTelefono());
-            ProfeTab.addColumn(p.getAsignatura1());
-            ProfeTab.addColumn(p.getAsignatura2());
-            ProfeTab.addColumn(p.getAsignatura3());
-            ProfeTab.addColumn(p.getAsignatura4());
-            ProfeTab.addColumn(p.getAsignatura5());
-            ProfeTab.addColumn(p.getAsignatura6());
+            ProfeTab.addColumn("DNI");
+            ProfeTab.addColumn("Nombre");
+            ProfeTab.addColumn("Apellidos");
+            ProfeTab.addColumn("Domicilio");
+            ProfeTab.addColumn("Telefono");
+            ProfeTab.addColumn("Asignatura");
+            ProfeTab.addColumn("Asignatura");
+            ProfeTab.addColumn("Asignatura");
+            ProfeTab.addColumn("Asignatura");
+            ProfeTab.addColumn("Asignatura");
+            ProfeTab.addColumn("Asignatura");
 
             // RELLENAMOS EL ARRAY CON LOS OBJETOS
             fila[0] = p.getDni();
@@ -73,18 +72,17 @@ public class ProfesorDAO implements ProfeDAOInter {
         return ProfeTab;
     }
 
-    @Override
-    public ArrayList<Profesor> selectProfesor(int dni) {
-        ArrayList<Profesor> array = new ArrayList<>();
-        Transaction tx = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Profesor p;
-        p = (Profesor) session.get(Profesor.class, dni);
-        // System.out.println("Autor:" + p.getNombre());
-        session.close();
-        return array;
-    }
-
+//    @Override
+//    public ArrayList<Profesor> selectProfesor(int dni) {
+//        ArrayList<Profesor> array = new ArrayList<>();
+//        Transaction tx = null;
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        Profesor p;
+//        p = (Profesor) session.get(Profesor.class, dni);
+//        // System.out.println("Autor:" + p.getNombre());
+//        session.close();
+//        return array;
+//    }
     @Override
     public void InsertUpdateProfesor(String dni, String nombre, String apellidos, String domicilio, int telefono, String asignatura1, String asignatura2, String asignatura3, String asignatura4, String asignatura5, String asignatura6) {
         Transaction tx = null;

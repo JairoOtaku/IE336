@@ -15,9 +15,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public interface ProfeDAOInter {
 
-    public ArrayList<Profesor> selectAllProfesor();
+ 
 
-    public ArrayList<Profesor> selectProfesor(int dni);
+    //public ArrayList<Profesor> selectProfesor(int dni);
 
     public void InsertUpdateProfesor(String dni, String nombre, String apellidos, String domicilio, int telefono, String asignatura1, String asignatura2, String asignatura3, String asignatura4, String asignatura5, String asignatura6);
 

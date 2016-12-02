@@ -19,7 +19,7 @@ public class AsignaturaDAO implements AsigDAOInter {
     Asignatura asig;
     //Factory factoria
 
-    @Override
+    
     public ArrayList<Asignatura> selectAllAsignatura() {
         ArrayList<Asignatura> array = new ArrayList<>();
         String c = "select a from Asignatura a";
@@ -35,7 +35,7 @@ public class AsignaturaDAO implements AsigDAOInter {
         return array;
     }
 
-    @Override
+    
     public ArrayList<Asignatura> selectAsignatura(int codigo) {
         ArrayList<Asignatura> array = new ArrayList<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -76,9 +76,9 @@ public class AsignaturaDAO implements AsigDAOInter {
         Object[] fila = new Object[3];
         for (Asignatura as : selectAllAsignatura()) {
             // CREAMOS LOS NOMBRES DE LAS COLUMNAS
-            AsigTab.addColumn(as.getCodigo());
-            AsigTab.addColumn(as.getTitulo());
-            AsigTab.addColumn(as.getCreditos());
+            AsigTab.addColumn("Cod.");
+            AsigTab.addColumn("Titulo");
+            AsigTab.addColumn("Creditos");
             // RELLENAMOS EL ARRAY CON LOS OBJETOS
             fila[0] = as.getCodigo();
             fila[1] = as.getTitulo();

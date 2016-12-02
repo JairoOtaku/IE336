@@ -19,7 +19,6 @@ public class AulasDAO implements AulaDAOInter {
     Aulas aulas;
     //Factory factoria
 
-    @Override
     public ArrayList<Aulas> selectAllAulas() {
         ArrayList<Aulas> array = new ArrayList<>();
         String c = "select a from Aulas a";
@@ -35,7 +34,6 @@ public class AulasDAO implements AulaDAOInter {
         return array;
     }
 
-    @Override
     public ArrayList<Aulas> selectAulas(int NAula) {
         ArrayList<Aulas> array = new ArrayList<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -75,8 +73,8 @@ public class AulasDAO implements AulaDAOInter {
         Object[] fila = new Object[2];
         for (Aulas au : selectAllAulas()) {
             // CREAMOS LOS NOMBRES DE LAS COLUMNAS
-            AulaTab.addColumn(au.getNAula());
-            AulaTab.addColumn(au.getNombreEdificio());
+            AulaTab.addColumn("Nº Aula");
+            AulaTab.addColumn("Nombre Edificio");
 
             // RELLENAMOS EL ARRAY CON LOS OBJETOS
             fila[0] = au.getNAula();

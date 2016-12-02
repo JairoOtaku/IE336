@@ -10,10 +10,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public interface AlumDAOInter {
 
-    public ArrayList<Alumno> selectAllAlumnos();
-
-    public ArrayList<Alumno> selectAlumno(int dni);
-
     public void InsertUpdateAlumno(String dni, String nombre, String apellidos, String domicilio, int telefono, int acceso);
 
     public void deleteAlumno(String dni);

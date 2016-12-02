@@ -19,7 +19,7 @@ public class AlumnoDAO implements AlumDAOInter {
     Alumno alum;
     //Factory factoria
 
-    @Override
+    
     public ArrayList<Alumno> selectAllAlumnos() {
         ArrayList<Alumno> arralum = new ArrayList<>();
 
@@ -42,12 +42,12 @@ public class AlumnoDAO implements AlumDAOInter {
         Object[] fila = new Object[6];
         for (Alumno al : selectAllAlumnos()) {
             // CREAMOS LOS NOMBRES DE LAS COLUMNAS
-            AlumTab.addColumn(al.getDni());
-            AlumTab.addColumn(al.getNombre());
-            AlumTab.addColumn(al.getApellidos());
-            AlumTab.addColumn(al.getDomicilio());
-            AlumTab.addColumn(al.getTelefono());
-            AlumTab.addColumn(al.getAcceso());
+            AlumTab.addColumn("DNI");
+            AlumTab.addColumn("Nombre");
+            AlumTab.addColumn("Apellidos");
+            AlumTab.addColumn("Domicilio");
+            AlumTab.addColumn("Telefono");
+            AlumTab.addColumn("Acceso");
 
             // RELLENAMOS EL ARRAY CON LOS OBJETOS
             fila[0] = al.getDni();
@@ -63,7 +63,7 @@ public class AlumnoDAO implements AlumDAOInter {
         return AlumTab;
     }
 
-    @Override
+    
     public ArrayList<Alumno> selectAlumno(int dni) {
         ArrayList<Alumno> arralum = new ArrayList<>();
 

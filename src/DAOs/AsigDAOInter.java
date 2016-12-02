@@ -15,10 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public interface AsigDAOInter {
 
-    public ArrayList<Asignatura> selectAllAsignatura();
-
-    public ArrayList<Asignatura> selectAsignatura(int codigo);
-
+   
     public void InsertUpdateAsignatura(int codigo, String titulo, int creditos);
 
     public void deleteAsignatura(int codigo);
