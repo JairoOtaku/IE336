@@ -5,17 +5,14 @@
  */
 package DAOs;
 
-import Pojos.Asignatura;
-import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Usuario
  */
-public interface AsigDAOInter {
+public interface AsignaturaDAOInter {
 
-   
     public void InsertUpdateAsignatura(int codigo, String titulo, int creditos);
 
     public void deleteAsignatura(int codigo);

@@ -14,7 +14,7 @@ import utiles.HibernateUtil;
  *
  * @author Jairo_Otaku
  */
-public class AsignaturaDAO implements AsigDAOInter {
+public class AsignaturaDAO implements AsignaturaDAOInter {
 
     Asignatura asig;
     //Factory factoria
