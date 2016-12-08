@@ -24,10 +24,8 @@ public class Primera extends javax.swing.JFrame {
         initComponents();
         //AQUI LA CARGA DE LAS TABLAS
         TablaAlumno.setModel(facade.todoAlumnos());
-
-        facade.todoAsignaturas();
-
-        facade.todoProfes();
+        TablaAsignatura.setModel(facade.todoAsignaturas());
+        TablaProfesor.setModel(facade.todoProfes());
 
     }
 
@@ -40,12 +38,28 @@ public class Primera extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        PanelAlumno = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaAlumno = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        btnAgregarAlumno = new javax.swing.JButton();
+        btnActualizarAlumno = new javax.swing.JButton();
+        btnBorrarAlumno = new javax.swing.JButton();
+        PanelProfesor = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaProfesor = new javax.swing.JTable();
+        jPanel7 = new javax.swing.JPanel();
+        btnAgregarProfesor = new javax.swing.JButton();
+        btnActualizarProfesor = new javax.swing.JButton();
+        btnBorrarProfesor = new javax.swing.JButton();
+        PanelAsignatura = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TablaAsignatura = new javax.swing.JTable();
+        jPanel6 = new javax.swing.JPanel();
+        btnAgregarAsignatura = new javax.swing.JButton();
+        btnActualizarAsignatura = new javax.swing.JButton();
+        btnBorrarAsignatura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,54 +76,126 @@ public class Primera extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(TablaAlumno);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 919, Short.MAX_VALUE)
+        jPanel5.setLayout(new java.awt.GridLayout(0, 3));
+
+        btnAgregarAlumno.setText("Agregar");
+        jPanel5.add(btnAgregarAlumno);
+
+        btnActualizarAlumno.setText("Actualizar");
+        jPanel5.add(btnActualizarAlumno);
+
+        btnBorrarAlumno.setText("Borrar");
+        jPanel5.add(btnBorrarAlumno);
+
+        javax.swing.GroupLayout PanelAlumnoLayout = new javax.swing.GroupLayout(PanelAlumno);
+        PanelAlumno.setLayout(PanelAlumnoLayout);
+        PanelAlumnoLayout.setHorizontalGroup(
+            PanelAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 80, Short.MAX_VALUE)
+        PanelAlumnoLayout.setVerticalGroup(
+            PanelAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAlumnoLayout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jTabbedPane1.addTab("tab1", jPanel2);
+        jTabbedPane1.addTab("Alumnos", PanelAlumno);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 919, Short.MAX_VALUE)
+        TablaProfesor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(TablaProfesor);
+
+        jPanel7.setLayout(new java.awt.GridLayout(0, 3));
+
+        btnAgregarProfesor.setText("Agregar");
+        jPanel7.add(btnAgregarProfesor);
+
+        btnActualizarProfesor.setText("Actualizar");
+        jPanel7.add(btnActualizarProfesor);
+
+        btnBorrarProfesor.setText("Borrar");
+        jPanel7.add(btnBorrarProfesor);
+
+        javax.swing.GroupLayout PanelProfesorLayout = new javax.swing.GroupLayout(PanelProfesor);
+        PanelProfesor.setLayout(PanelProfesorLayout);
+        PanelProfesorLayout.setHorizontalGroup(
+            PanelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 507, Short.MAX_VALUE)
+        PanelProfesorLayout.setVerticalGroup(
+            PanelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelProfesorLayout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel3);
+        jTabbedPane1.addTab("Profesores", PanelProfesor);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+        TablaAsignatura.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(TablaAsignatura);
+
+        jPanel6.setLayout(new java.awt.GridLayout(0, 3));
+
+        btnAgregarAsignatura.setText("Agregar");
+        jPanel6.add(btnAgregarAsignatura);
+
+        btnActualizarAsignatura.setText("Actualizar");
+        jPanel6.add(btnActualizarAsignatura);
+
+        btnBorrarAsignatura.setText("Borrar");
+        jPanel6.add(btnBorrarAsignatura);
+
+        javax.swing.GroupLayout PanelAsignaturaLayout = new javax.swing.GroupLayout(PanelAsignatura);
+        PanelAsignatura.setLayout(PanelAsignaturaLayout);
+        PanelAsignaturaLayout.setHorizontalGroup(
+            PanelAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+        PanelAsignaturaLayout.setVerticalGroup(
+            PanelAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAsignaturaLayout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jTabbedPane1.addTab("Asignaturas", PanelAsignatura);
+        PanelAsignatura.getAccessibleContext().setAccessibleName("Asignaturas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -143,19 +229,33 @@ public class Primera extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Primera().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Primera().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel PanelAlumno;
+    public javax.swing.JPanel PanelAsignatura;
+    public javax.swing.JPanel PanelProfesor;
     public javax.swing.JTable TablaAlumno;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
-    public javax.swing.JPanel jPanel3;
+    public javax.swing.JTable TablaAsignatura;
+    public javax.swing.JTable TablaProfesor;
+    public javax.swing.JButton btnActualizarAlumno;
+    public javax.swing.JButton btnActualizarAsignatura;
+    public javax.swing.JButton btnActualizarProfesor;
+    public javax.swing.JButton btnAgregarAlumno;
+    public javax.swing.JButton btnAgregarAsignatura;
+    public javax.swing.JButton btnAgregarProfesor;
+    public javax.swing.JButton btnBorrarAlumno;
+    public javax.swing.JButton btnBorrarAsignatura;
+    public javax.swing.JButton btnBorrarProfesor;
+    public javax.swing.JPanel jPanel5;
+    public javax.swing.JPanel jPanel6;
+    public javax.swing.JPanel jPanel7;
+    public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JScrollPane jScrollPane3;
     public javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
