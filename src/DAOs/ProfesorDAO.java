@@ -39,20 +39,20 @@ public class ProfesorDAO implements ProfeDAOInter {
     public DefaultTableModel todoProfes() {
         DefaultTableModel ProfeTab = new DefaultTableModel();
         Object[] fila = new Object[11];
-        for (Profesor p : selectAllProfesor()) {
-            // CREAMOS LOS NOMBRES DE LAS COLUMNAS
-            ProfeTab.addColumn("DNI");
-            ProfeTab.addColumn("Nombre");
-            ProfeTab.addColumn("Apellidos");
-            ProfeTab.addColumn("Domicilio");
-            ProfeTab.addColumn("Telefono");
-            ProfeTab.addColumn("Asignatura");
-            ProfeTab.addColumn("Asignatura");
-            ProfeTab.addColumn("Asignatura");
-            ProfeTab.addColumn("Asignatura");
-            ProfeTab.addColumn("Asignatura");
-            ProfeTab.addColumn("Asignatura");
 
+        // CREAMOS LOS NOMBRES DE LAS COLUMNAS
+        ProfeTab.addColumn("DNI");
+        ProfeTab.addColumn("Nombre");
+        ProfeTab.addColumn("Apellidos");
+        ProfeTab.addColumn("Domicilio");
+        ProfeTab.addColumn("Telefono");
+        ProfeTab.addColumn("Asignatura");
+        ProfeTab.addColumn("Asignatura");
+        ProfeTab.addColumn("Asignatura");
+        ProfeTab.addColumn("Asignatura");
+        ProfeTab.addColumn("Asignatura");
+        ProfeTab.addColumn("Asignatura");
+        for (Profesor p : selectAllProfesor()) {
             // RELLENAMOS EL ARRAY CON LOS OBJETOS
             fila[0] = p.getDni();
             fila[1] = p.getNombre();
@@ -107,7 +107,7 @@ public class ProfesorDAO implements ProfeDAOInter {
 
     @Override
     public void deleteProfesor(String dni) {
-        String c = "delete from Profesor where dni='" + dni + "'";
+        String c = "DELETE FROM Profesor WHERE dni='" + dni + "'";
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query q = session.createQuery(c);
         session.close();

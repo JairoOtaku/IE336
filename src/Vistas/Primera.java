@@ -19,7 +19,6 @@ public class Primera extends javax.swing.JFrame {
         TablaAlumno.setModel(facade.todoAlumnos());
         TablaProfesor.setModel(facade.todoProfes());
         TablaAsignatura.setModel(facade.todoAsignaturas());
-
     }
 
     @SuppressWarnings("unchecked")
@@ -34,6 +33,7 @@ public class Primera extends javax.swing.JFrame {
         btnAgregarAlumno = new javax.swing.JButton();
         btnActualizarAlumno = new javax.swing.JButton();
         btnBorrarAlumno = new javax.swing.JButton();
+        btnRefreshAlumno = new javax.swing.JButton();
         PanelProfesor = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaProfesor = new javax.swing.JTable();
@@ -41,6 +41,7 @@ public class Primera extends javax.swing.JFrame {
         btnAgregarProfesor = new javax.swing.JButton();
         btnActualizarProfesor = new javax.swing.JButton();
         btnBorrarProfesor = new javax.swing.JButton();
+        btnRefreshProfesores = new javax.swing.JButton();
         PanelAsignatura = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TablaAsignatura = new javax.swing.JTable();
@@ -48,6 +49,7 @@ public class Primera extends javax.swing.JFrame {
         btnAgregarAsignatura = new javax.swing.JButton();
         btnActualizarAsignatura = new javax.swing.JButton();
         btnBorrarAsignatura = new javax.swing.JButton();
+        btnRefreshAsignatura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,16 +66,24 @@ public class Primera extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(TablaAlumno);
 
-        jPanel5.setLayout(new java.awt.GridLayout(0, 3));
+        jPanel5.setLayout(new java.awt.GridLayout(0, 4));
 
         btnAgregarAlumno.setText("Agregar");
         jPanel5.add(btnAgregarAlumno);
 
-        btnActualizarAlumno.setText("Actualizar");
+        btnActualizarAlumno.setText("Modificar");
         jPanel5.add(btnActualizarAlumno);
 
         btnBorrarAlumno.setText("Borrar");
         jPanel5.add(btnBorrarAlumno);
+
+        btnRefreshAlumno.setText("REFRESH");
+        btnRefreshAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshAlumnoActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnRefreshAlumno);
 
         javax.swing.GroupLayout PanelAlumnoLayout = new javax.swing.GroupLayout(PanelAlumno);
         PanelAlumno.setLayout(PanelAlumnoLayout);
@@ -105,12 +115,17 @@ public class Primera extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TablaProfesor);
 
-        jPanel7.setLayout(new java.awt.GridLayout(0, 3));
+        jPanel7.setLayout(new java.awt.GridLayout(0, 4));
 
         btnAgregarProfesor.setText("Agregar");
+        btnAgregarProfesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarProfesorActionPerformed(evt);
+            }
+        });
         jPanel7.add(btnAgregarProfesor);
 
-        btnActualizarProfesor.setText("Actualizar");
+        btnActualizarProfesor.setText("Modificar");
         btnActualizarProfesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarProfesorActionPerformed(evt);
@@ -119,7 +134,20 @@ public class Primera extends javax.swing.JFrame {
         jPanel7.add(btnActualizarProfesor);
 
         btnBorrarProfesor.setText("Borrar");
+        btnBorrarProfesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarProfesorActionPerformed(evt);
+            }
+        });
         jPanel7.add(btnBorrarProfesor);
+
+        btnRefreshProfesores.setText("REFRESH");
+        btnRefreshProfesores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshProfesoresActionPerformed(evt);
+            }
+        });
+        jPanel7.add(btnRefreshProfesores);
 
         javax.swing.GroupLayout PanelProfesorLayout = new javax.swing.GroupLayout(PanelProfesor);
         PanelProfesor.setLayout(PanelProfesorLayout);
@@ -151,16 +179,24 @@ public class Primera extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(TablaAsignatura);
 
-        jPanel6.setLayout(new java.awt.GridLayout(0, 3));
+        jPanel6.setLayout(new java.awt.GridLayout(0, 4));
 
         btnAgregarAsignatura.setText("Agregar");
         jPanel6.add(btnAgregarAsignatura);
 
-        btnActualizarAsignatura.setText("Actualizar");
+        btnActualizarAsignatura.setText("Modificar");
         jPanel6.add(btnActualizarAsignatura);
 
         btnBorrarAsignatura.setText("Borrar");
         jPanel6.add(btnBorrarAsignatura);
+
+        btnRefreshAsignatura.setText("RESFRESH");
+        btnRefreshAsignatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshAsignaturaActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnRefreshAsignatura);
 
         javax.swing.GroupLayout PanelAsignaturaLayout = new javax.swing.GroupLayout(PanelAsignatura);
         PanelAsignatura.setLayout(PanelAsignaturaLayout);
@@ -192,6 +228,7 @@ public class Primera extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarProfesorActionPerformed
@@ -199,49 +236,73 @@ public class Primera extends javax.swing.JFrame {
         DialogProfesor JDProfesor = new DialogProfesor(this, true);
 
         //dni
-        JDProfesor.dni.setText(TablaProfesor.getValueAt(aux, 0).toString());
+        JDProfesor.txtDni.setText(TablaProfesor.getValueAt(aux, 0).toString());
         //nombre
-        JDProfesor.nombre.setText(TablaProfesor.getValueAt(aux, 1).toString());
+        JDProfesor.txtNombre.setText(TablaProfesor.getValueAt(aux, 1).toString());
         //apellidos
-        JDProfesor.jTextField3.setText(TablaProfesor.getValueAt(aux, 2).toString());
+        JDProfesor.txtApellidos.setText(TablaProfesor.getValueAt(aux, 2).toString());
         //domicilio
-        JDProfesor.jTextField4.setText(TablaProfesor.getValueAt(aux, 3).toString());
+        JDProfesor.txtDomicilio.setText(TablaProfesor.getValueAt(aux, 3).toString());
         //telefono
-        JDProfesor.jTextField5.setText( TablaProfesor.getValueAt(aux, 4).toString());
+        JDProfesor.txtTelefono.setText(TablaProfesor.getValueAt(aux, 4).toString());
         //asignaturas 5 - 10
         if (TablaProfesor.getValueAt(aux, 5) == null) {
-            JDProfesor.jTextField6.setText("asignatura 1");
+            JDProfesor.txtAsig1.setText("asignatura 1");
         } else {
-            JDProfesor.jTextField6.setText(TablaProfesor.getValueAt(aux, 5).toString());
+            JDProfesor.txtAsig1.setText(TablaProfesor.getValueAt(aux, 5).toString());
         }
         if (TablaProfesor.getValueAt(aux, 6) == null) {
-            JDProfesor.jTextField7.setText("asignatura 2");
+            JDProfesor.txtAsig2.setText("asignatura 2");
         } else {
-            JDProfesor.jTextField7.setText(TablaProfesor.getValueAt(aux, 6).toString());
+            JDProfesor.txtAsig2.setText(TablaProfesor.getValueAt(aux, 6).toString());
         }
         if (TablaProfesor.getValueAt(aux, 7) == null) {
-            JDProfesor.jTextField8.setText("asignatura 3");
+            JDProfesor.txtAsig3.setText("asignatura 3");
         } else {
-            JDProfesor.jTextField8.setText(TablaProfesor.getValueAt(aux, 7).toString());
+            JDProfesor.txtAsig3.setText(TablaProfesor.getValueAt(aux, 7).toString());
         }
         if (TablaProfesor.getValueAt(aux, 8) == null) {
-            JDProfesor.jTextField9.setText("asignatura 4");
+            JDProfesor.txtAsig4.setText("asignatura 4");
         } else {
-            JDProfesor.jTextField9.setText(TablaProfesor.getValueAt(aux, 8).toString());
+            JDProfesor.txtAsig4.setText(TablaProfesor.getValueAt(aux, 8).toString());
         }
         if (TablaProfesor.getValueAt(aux, 9) == null) {
-            JDProfesor.jTextField10.setText("asignatura 5");
+            JDProfesor.txtAsig5.setText("asignatura 5");
         } else {
-            JDProfesor.jTextField10.setText(TablaProfesor.getValueAt(aux, 9).toString());
+            JDProfesor.txtAsig5.setText(TablaProfesor.getValueAt(aux, 9).toString());
         }
         if (TablaProfesor.getValueAt(aux, 10) == null) {
-            JDProfesor.jTextField11.setText("asignatura 6");
+            JDProfesor.txtAsig6.setText("asignatura 6");
         } else {
-            JDProfesor.jTextField11.setText(TablaProfesor.getValueAt(aux, 10).toString());
+            JDProfesor.txtAsig6.setText(TablaProfesor.getValueAt(aux, 10).toString());
         }
 
         JDProfesor.setVisible(true);
     }//GEN-LAST:event_btnActualizarProfesorActionPerformed
+
+    private void btnAgregarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProfesorActionPerformed
+        DialogProfesor JDProfesor = new DialogProfesor(this, true);
+        JDProfesor.setVisible(true);
+    }//GEN-LAST:event_btnAgregarProfesorActionPerformed
+
+    private void btnRefreshAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshAlumnoActionPerformed
+        TablaAlumno.setModel(facade.todoAlumnos());
+    }//GEN-LAST:event_btnRefreshAlumnoActionPerformed
+
+    private void btnRefreshProfesoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshProfesoresActionPerformed
+        TablaProfesor.setModel(facade.todoProfes());
+    }//GEN-LAST:event_btnRefreshProfesoresActionPerformed
+
+    private void btnRefreshAsignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshAsignaturaActionPerformed
+        TablaAsignatura.setModel(facade.todoAsignaturas());
+    }//GEN-LAST:event_btnRefreshAsignaturaActionPerformed
+
+    private void btnBorrarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarProfesorActionPerformed
+        int aux = TablaProfesor.getSelectedRow();
+        String dni = TablaProfesor.getValueAt(aux, 0).toString();
+        System.out.println(dni);
+        facade.deleteProfesor(TablaProfesor.getValueAt(aux, 0).toString());
+    }//GEN-LAST:event_btnBorrarProfesorActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -289,6 +350,9 @@ public class Primera extends javax.swing.JFrame {
     public javax.swing.JButton btnBorrarAlumno;
     public javax.swing.JButton btnBorrarAsignatura;
     public javax.swing.JButton btnBorrarProfesor;
+    public javax.swing.JButton btnRefreshAlumno;
+    public javax.swing.JButton btnRefreshAsignatura;
+    public javax.swing.JButton btnRefreshProfesores;
     public javax.swing.JPanel jPanel5;
     public javax.swing.JPanel jPanel6;
     public javax.swing.JPanel jPanel7;

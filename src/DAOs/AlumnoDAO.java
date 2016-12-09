@@ -40,7 +40,7 @@ public class AlumnoDAO implements AlumDAOInter {
     public DefaultTableModel todoAlumnos() {
         DefaultTableModel AlumTab = new DefaultTableModel();
         Object[] fila = new Object[6];
-        for (Alumno al : selectAllAlumnos()) {
+       
             // CREAMOS LOS NOMBRES DE LAS COLUMNAS
             AlumTab.addColumn("DNI");
             AlumTab.addColumn("Nombre");
@@ -48,7 +48,7 @@ public class AlumnoDAO implements AlumDAOInter {
             AlumTab.addColumn("Domicilio");
             AlumTab.addColumn("Telefono");
             AlumTab.addColumn("Acceso");
-
+ for (Alumno al : selectAllAlumnos()) {
             // RELLENAMOS EL ARRAY CON LOS OBJETOS
             fila[0] = al.getDni();
             fila[1] = al.getNombre();
